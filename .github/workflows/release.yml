@@ -11,7 +11,7 @@ jobs:
   check-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Tag matches manifest + frontend versions
         run: |
           TAG="${GITHUB_REF_NAME#v}"
