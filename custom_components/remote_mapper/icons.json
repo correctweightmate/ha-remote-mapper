@@ -1,0 +1,12 @@
+{
+  "entity": {
+    "switch": {
+      "edit_mode": {
+        "default": "mdi:pencil-circle",
+        "state": {
+          "off": "mdi:pencil-circle-outline"
+        }
+      }
+    }
+  }
+}

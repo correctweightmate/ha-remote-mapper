@@ -1,0 +1,21 @@
+name: Add a layout for my remote
+description: Ask for a dedicated button layout (the generic layout already works for every event-based remote)
+labels: [layout]
+body:
+  - type: input
+    id: remote
+    attributes:
+      label: Remote (manufacturer + model)
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: Add the remote with the generic layout, then Settings → Devices & services → Remote Mapper → ⋮ → Download diagnostics, and attach it. It lists the event entities and event types.
+    validations:
+      required: true
+  - type: textarea
+    id: layout
+    attributes:
+      label: How the buttons are physically laid out

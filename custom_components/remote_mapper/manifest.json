@@ -1,0 +1,13 @@
+{
+  "domain": "remote_mapper",
+  "name": "Remote Mapper",
+  "codeowners": ["@correctweightmate"],
+  "config_flow": true,
+  "dependencies": ["frontend", "http", "panel_custom", "websocket_api"],
+  "documentation": "https://github.com/correctweightmate/ha-remote-mapper",
+  "integration_type": "helper",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/correctweightmate/ha-remote-mapper/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

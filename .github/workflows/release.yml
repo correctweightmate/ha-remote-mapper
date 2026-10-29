@@ -1,0 +1,22 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tag matches manifest + frontend versions
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          MANIFEST=$(python3 -c "import json;print(json.load(open('custom_components/remote_mapper/manifest.json'))['version'])")
+          CONST=$(python3 -c "import re;print(re.search(r'VERSION: Final = \"(.+?)\"', open('custom_components/remote_mapper/const.py').read()).group(1))")
+          JS=$(grep -oP "const VERSION = '\K[^']+" custom_components/remote_mapper/frontend/remote-mapper.js)
+          echo "tag=$TAG manifest=$MANIFEST const=$CONST js=$JS"
+          test "$TAG" = "$MANIFEST" && test "$TAG" = "$CONST" && test "$TAG" = "$JS"

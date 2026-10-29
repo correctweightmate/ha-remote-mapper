@@ -1,0 +1,42 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Pick a remote",
+        "description": "Choose any device that has button (event) entities, e.g. an IKEA BILRESA scroll wheel, Hue dimmer or Matter switch. After adding it, open **Remote Mapper** in the sidebar, tap the pencil, press a button and choose what it should do.",
+        "data": {
+          "device_id": "Remote"
+        }
+      }
+    },
+    "error": {
+      "device_not_found": "That device no longer exists.",
+      "no_event_entities": "This device has no enabled event (button) entities."
+    },
+    "abort": {
+      "already_configured": "This remote is already set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Remote Mapper options",
+        "data": {
+          "profile": "Button layout",
+          "edit_timeout": "Edit mode turns itself off after"
+        },
+        "data_description": {
+          "profile": "Automatic picks a dedicated layout when one exists for this model. Changing it clears mappings that do not exist in the new layout.",
+          "edit_timeout": "Seconds of inactivity before edit mode switches off and the remote works normally again."
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "edit_mode": {
+        "name": "Remote Mapper edit mode"
+      }
+    }
+  }
+}

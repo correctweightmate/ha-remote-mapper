@@ -1,0 +1,35 @@
+name: Bug report
+description: Something isn't working
+labels: [bug]
+body:
+  - type: input
+    id: remote
+    attributes:
+      label: Remote (manufacturer + model)
+      placeholder: IKEA BILRESA scroll wheel
+    validations:
+      required: true
+  - type: input
+    id: ha
+    attributes:
+      label: Home Assistant version
+      placeholder: "2026.10.4"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: Settings → Devices & services → Remote Mapper → ⋮ → Download diagnostics. Paste or attach it here.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Add `logger: logs: custom_components.remote_mapper: debug` to configuration.yaml, reproduce, then paste the relevant lines.
+      render: text
